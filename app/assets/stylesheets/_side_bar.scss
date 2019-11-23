@@ -1,10 +1,17 @@
+* {
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .sidebar {
   height: 100vh;
   width: 300px;
   float: left;
   background-color: #a3c4ee;
   &-header{
-    height: 82px;
+    height: 100px;
     padding: 0 20px;
     background-color: #253141;
     display: flex;
@@ -22,7 +29,7 @@
     }
   }
   &-contents{
-    height: 100%;
+    height: calc(100vh - 100px);
     background-color: #2f3e51;
     &__group{
       height: 31px;

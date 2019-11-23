@@ -1,0 +1,23 @@
+.main
+  .main-header
+    .main-header__left
+      .main-header__left--group
+        group-name
+      .main-header__left--member
+        member:
+    =link_to "#", class: "main-header__btn" do
+      Edit
+  .main-chat
+    .main-chat__message
+      .main-chat__message--name
+        test-user
+      .main-chat__message--date
+        2019/11/20 12:00
+      .main-chat__message--text
+        hello!
+  .main-form
+    %input{type: "text", placeholder: "type a message", class: "main-form__text"}
+    %label{class: "main-form__file"}  
+      = icon('fas', 'image', class: "main-form__file--icon")
+      %input{type: "file", class: "main-form__file--input"}
+    %input{type: "submit", value: "Send", class: "main-form__submit"}
