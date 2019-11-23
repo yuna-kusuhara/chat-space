@@ -1,9 +1,3 @@
-::placeholder{
-  color:#434A54;
-  font-size: 16px;
-  padding-left: 10px;
-}
-
 .main{
   width: calc(100vw - 300px);
   float: left;
@@ -13,7 +7,7 @@
     display: flex;
     justify-content:space-between;
     border-bottom:solid 1px #eeeeee;
-    &__left{
+    &__leftbox{
       padding-top: 35px;
       &--group{
         font-size: 20px;
@@ -71,14 +65,14 @@
       height: 50px;
       flex-grow: 1;
     }
-    &__file{
+    &__image{
       position: relative;
       right: 25px;
       width: 0;
       &--icon{
 
       }
-      &--input{
+      &--file{
         display: none;
       }
     }

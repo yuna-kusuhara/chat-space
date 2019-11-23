@@ -1,5 +1,6 @@
-@import "./reset";
+@import "reset";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "side_bar.scss";
-@import "main_chat.scss"
+@import "./modules/main_common";
+@import "./modules/side_bar";
+@import "./modules/main_chat";

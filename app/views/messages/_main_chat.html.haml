@@ -1,9 +1,9 @@
 .main
   .main-header
-    .main-header__left
-      .main-header__left--group
+    .main-header__leftbox
+      .main-header__leftbox--group
         group-name
-      .main-header__left--member
+      .main-header__leftbox--member
         member:
     =link_to "#", class: "main-header__btn" do
       Edit
@@ -17,7 +17,7 @@
         hello!
   .main-form
     %input{type: "text", placeholder: "type a message", class: "main-form__text"}
-    %label{class: "main-form__file"}  
-      = icon('fas', 'image', class: "main-form__file--icon")
-      %input{type: "file", class: "main-form__file--input"}
+    %label{class: "main-form__image"}  
+      = icon('fas', 'image', class: "main-form__image--icon")
+      %input{type: "file", class: "main-form__image--file"}
     %input{type: "submit", value: "Send", class: "main-form__submit"}
