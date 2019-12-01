@@ -1,0 +1,19 @@
+.sidebar
+  .sidebar-header
+    .sidebar-header__username
+      = current_user.name
+    =link_to new_group_path, class: "sidebar-header__btn" do
+      = icon('fas', 'edit', class: "sidebar-header__btn--icon fa-pull-right")
+      %span<>
+    =link_to edit_user_path(current_user), class: "sidebar-header__btn" do
+      = icon('fas', 'cog', class: "sidebar-header__btn--icon fa-pull-right")
+      %span<>
+  .sidebar-contents
+    - current_user.groups.each do |group|
+      .sidebar-contents__group
+        = link_to '#' do
+          .sidebar-contents__group--name
+            = group.name
+          .sidebar-contents__group--newchat
+            hello
+          
