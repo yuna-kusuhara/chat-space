@@ -2,22 +2,28 @@
   .main-header
     .main-header__leftbox
       .main-header__leftbox--group
-        group-name
+        = @group.name
       .main-header__leftbox--member
         member:
-    =link_to "#", class: "main-header__btn" do
+        - @group.users.each do |user|
+          = user.name
+    =link_to edit_group_path(@group), class: "main-header__btn" do
       Edit
   .main-chat
-    .main-chat__message
-      .main-chat__message--username
-        test-user
-      .main-chat__message--date
-        2019/11/20 12:00
-      .main-chat__message--text
-        hello!
-  .main-form
-    %input{type: "text", placeholder: "type a message", class: "main-form__text"}
-    %label{class: "main-form__image"}  
-      = icon('fas', 'image', class: "main-form__image--icon")
-      %input{type: "file", class: "main-form__image--file"}
-    %input{type: "submit", value: "Send", class: "main-form__submit"}
+    - @messages.each do |message|
+      .main-chat__message
+        .main-chat__message--username
+          = message.user.name
+        .main-chat__message--date
+          = message.created_at
+        - if message.content.present?
+          .main-chat__message--text
+            = message.content
+        = image_tag message.image.url, class: 'main-chat__message--image' if message.image.present?
+  = form_for [@group, @message] do |f|
+    .main-form
+      = f.text_field :content, class: 'main-form__text', placeholder: 'type a message'
+      = f.label :image, class: 'main-form__image' do
+        = icon('fas', 'image', class: "main-form__image--icon")
+        = f.file_field :image, class: "main-form__image--file"
+      = f.submit 'Send', class: "main-form__submit"
