@@ -6,7 +6,7 @@ $(function(){
                     ${message.user_name}
                     </div>
                     <div class="main-chat__message--date">
-                    ${format(message.created_at,'YYYY-MM-DD HH:MM:SS') & ' UTC'}
+                    ${message.created_at.strftime("%Y-%m-%d %H:%M")}
                     </div>
                     <div class="main-chat__message--text">
                     ${message.content}
@@ -31,7 +31,6 @@ $(function(){
 
   $(".new_message").on("submit", function(e){
     e.preventDefault()
-        cancelFlag = 1;
         var formData = new FormData(this);
         var url = $(this).attr('action')
         $.ajax({
@@ -53,8 +52,5 @@ $(function(){
         $('.main-form__submit').prop("disabled", false);
         alert('メッセージ送信に失敗しました');
       })
-      setTimeout(function(){
-        cancelFlag = 0;
-      },1000);
   });
 });
