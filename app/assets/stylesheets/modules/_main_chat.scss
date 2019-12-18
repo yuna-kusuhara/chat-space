@@ -33,6 +33,7 @@
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 0 40px;
+    overflow: scroll;
     &__message{
       padding-top: 46px;
       &--username{

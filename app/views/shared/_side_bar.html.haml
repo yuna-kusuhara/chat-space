@@ -11,7 +11,7 @@
   .sidebar-contents
     - current_user.groups.each do |group|
       .sidebar-contents__group
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group), class: "sidebar-contents__group--link" do
           .sidebar-contents__group--name
             = group.name
           .sidebar-contents__group--newchat
