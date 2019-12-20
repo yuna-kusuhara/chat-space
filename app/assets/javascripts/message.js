@@ -4,35 +4,35 @@ $(function(){
     if (message.image && message.content) {
       var html = `<div class="main-chat__message" data-message-id="${message.id}">
                     <div class="main-chat__message--username">
-                    ${message.user_name}
+                      ${message.user_name}
                     </div>
                     <div class="main-chat__message--date">
-                    ${message.created_at}
+                      ${message.created_at}
                     </div>"
                     <div class="main-chat__message--text">
-                    ${message.content}
+                      ${message.content}
                     </div>
                     <img class="main-chat__message--image" src="${message.image}">
                   </div>`
     } else if (message.content) {
       var html = `<div class="main-chat__message" data-message-id="${message.id}">
                     <div class="main-chat__message--username">
-                    ${message.user_name}
+                      ${message.user_name}
                     </div>
                     <div class="main-chat__message--date">
-                    ${message.created_at}
+                      ${message.created_at}
                     </div>
                     <div class="main-chat__message--text">
-                    ${message.content}
+                      ${message.content}
                     </div>
                   </div>`
     } else {
       var html = `<div class="main-chat__message" data-message-id="${message.id}">
                     <div class="main-chat__message--username">
-                    ${message.user_name}
+                      ${message.user_name}
                     </div>
                     <div class="main-chat__message--date">
-                    ${message.created_at}
+                      ${message.created_at}
                     </div>
                     <div class="main-chat__message--text">
                     </div>
@@ -55,7 +55,6 @@ $(function(){
           contentType: false
         })
         .done(function(data) {
-          console.log(data);
           var html = buildHTML(data);
           $('.main-chat').append(html);
           $('.new_message')[0].reset();
@@ -89,7 +88,7 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('自動更新に失敗しました');
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/))
