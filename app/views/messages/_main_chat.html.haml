@@ -11,11 +11,11 @@
       Edit
   .main-chat
     - @messages.each do |message|
-      .main-chat__message
+      .main-chat__message{data: {message: {id: message.id}}}
         .main-chat__message--username
           = message.user.name
         .main-chat__message--date
-          = message.created_at.strftime("%Y-%m-%d %H:%M")
+          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
         .main-chat__message--text
           - if message.content.present?
             = message.content
